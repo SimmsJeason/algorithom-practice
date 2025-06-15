@@ -1,4 +1,4 @@
-package Sort;
+package typicalAlgorithom.Sort;
 
 public abstract class Sort<T extends Comparable<T>> {
 

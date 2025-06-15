@@ -1,6 +1,5 @@
 package dailyPractice.day0611.Leecode2.HashMap;
 
-import com.sun.javafx.image.IntPixelGetter;
 
 import java.util.HashMap;
 import java.util.Map;

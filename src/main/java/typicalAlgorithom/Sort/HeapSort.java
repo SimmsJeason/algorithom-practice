@@ -1,4 +1,4 @@
-package Sort;
+package typicalAlgorithom.Sort;
 
 public class HeapSort<T extends Comparable<T>> extends Sort<T> {
     /**

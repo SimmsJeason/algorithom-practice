@@ -1,4 +1,4 @@
-package Sort;
+package typicalAlgorithom.Sort;
 
 public class HeapSortInt {
 
