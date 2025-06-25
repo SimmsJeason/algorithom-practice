@@ -38,7 +38,7 @@ public class LC206 {
             return head;
         }
         ListNode next = head.next;
-        ListNode newHead = reverseList(next);//拿到尾结点
+        ListNode newHead = reverseList2(next);//拿到尾结点
        //交换结点
         next.next = head;
         head.next = null;
