@@ -32,11 +32,11 @@ import java.util.Queue;
  * 你可以假定输入的先决条件中没有重复的边。
  * 1 <= numCourses <= 10^5
  *
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/course-schedule
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ *
  */
 public class LC207 {
+    //拓扑排序,说白了就是检验是否是有向无环图
+    //BFS
     public boolean canFinish(int numCourses, int[][] prerequisites) {
 
         //入度表
@@ -48,6 +48,7 @@ public class LC207 {
         //入度为 0 的入队
         Queue<Integer> queue = new LinkedList<>();
 
+        //初始化邻接表
         for(int i = 0; i < numCourses; i++)
             adjacency.add(new ArrayList<>());
 
