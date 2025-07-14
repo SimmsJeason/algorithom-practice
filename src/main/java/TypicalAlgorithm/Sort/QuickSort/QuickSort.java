@@ -4,6 +4,12 @@ import TypicalAlgorithm.Sort.SortInt;
 
 import java.util.Arrays;
 
+/**
+ * 快速排序的核心是分治法：将一个复杂的大问题分解为多个相似的小问题，解决小问题后，大问题的解自然得到。具体到排序中：
+ * 分解：选择一个 “基准元素”（pivot），将数组分为两部分 —— 左部分元素均小于等于基准，右部分元素均大于等于基准（分区操作）；
+ * 解决：递归地对左右两部分子数组执行快速排序；
+ * 合并：由于子数组在排序过程中已原地处理，无需额外合并操作，整个数组自然有序。
+ */
 public class QuickSort extends SortInt {
 
     static  int  count = 0;
@@ -27,19 +33,19 @@ public class QuickSort extends SortInt {
 
     private int partition(int [] nums, int l, int h) {
         int i = l, j = h + 1;//为了 --j
-        int v = nums[l];
+        int v = nums[l]; // 基准值，将区间第一个作为基准值
 
         while (true) {
-            while (less(nums[++i], v) && i != h) ;
-            while (less(v, nums[--j]) && j != l) ;
+            while (less(nums[++i], v) && i != h) ; //小于基准值的跳过，保证左边的都小于基准值
+            while (less(v, nums[--j]) && j != l) ; //大于基准值的跳过，保证右边的都大于基准值
             if (i >= j)
                 break;
-            swap(nums, i, j);
+            swap(nums, i, j); //交换
         }
 
-        swap(nums, l, j);
+        swap(nums, l, j); //找到基准值正确的位置，然后交换
 
-        return j;
+        return j; //返回基准值分隔区间的下边，即本次排序，基准值的位置是完全正确的，后续的排序不会影响到这个位置的值
     }
 
     //挖坑，填坑法

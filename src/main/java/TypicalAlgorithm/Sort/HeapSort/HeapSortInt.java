@@ -1,6 +1,8 @@
 package TypicalAlgorithm.Sort.HeapSort;
 
-public class HeapSortInt {
+import TypicalAlgorithm.Sort.SortInt;
+
+public class HeapSortInt extends SortInt {
 
     public void sort(int [] nums){
         int N = nums.length - 1;
@@ -16,6 +18,7 @@ public class HeapSortInt {
         }
     }
 
+    // 下沉
     private void sink (int [] nums , int k, int N){
 
         while(2 * k <= N){
@@ -37,18 +40,11 @@ public class HeapSortInt {
 
     }
 
-    private void swap ( int [] nums , int i, int j){
-        int tmp = nums[i];
-        nums [i] = nums[j];
-        nums[j] = tmp;
-    }
-
-    private boolean less (int [] nums , int i, int j){
-        if(nums[i] < nums[j]){
-            return true;
-        }else {
-            return false;
+    //上浮
+    private void swim(int[] nums, int k) {
+        while (k > 1 && less(nums, k / 2, k)) {
+            swap(nums, k / 2, k);
+            k = k / 2;
         }
     }
-
 }
