@@ -47,11 +47,11 @@ public class MergeSort extends SortInt {
 
         // 比较并合并元素
         while (i <= mid && j <= right) {
-            if (temp[i] <= temp[j]) {
-                arr[k] = temp[i];
+            if (temp[i] <= temp[j]) { //左右比较
+                arr[k] = temp[i]; // 小的放进去
                 i++;
             } else {
-                arr[k] = temp[j];
+                arr[k] = temp[j]; // 小的放进去
                 j++;
             }
             k++;
